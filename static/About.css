@@ -1,0 +1,106 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+nav {
+    background-color: white;
+    padding: 10px 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+    color: black;
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.main-content {
+    display: flex;
+    height: 600px;
+    padding: 20px;
+}
+
+.left-content {
+    flex: 1;
+    background-color: #f0f0f0;
+}
+
+.left-content img {
+    width: 700px;
+    height: 550px;
+    object-fit: cover;
+    margin:5px;
+
+}
+
+.right-content {
+    flex: 2;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    width: 320px;
+    height:550px;
+}
+
+.right-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.right-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.right-content blockquote {
+    font-size: 18px;
+    font-style: italic;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 4px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.right-content .quote {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.right-content .idiom {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #888;
+    font-style: italic;
+}

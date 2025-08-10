@@ -1,0 +1,161 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+
+nav {
+    background-color: white;
+    padding: 10px 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+    color: black;
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.auth-container {
+    display: flex;
+    height: 600px;
+}
+
+.left-content {
+    flex: 1;
+    background-color: #f0f0f0;
+}
+
+.left-content img {
+    width: 750px;
+    height: 550px;
+    margin: 5px;
+    object-fit: cover;
+}
+
+.auth-form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-form-container div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 380px;
+}
+
+.auth-form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.auth-form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.auth-form-container input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-form-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: green;
+}
+
+.auth-form-container button:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.auth-form-container .facebook-button {
+    background-color: #3b5998;
+    color: white;
+}
+
+.auth-form-container .google-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #db4437;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-form-container .google-button img {
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.signup-prompt {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-prompt a {
+    color: green;
+    text-decoration: none;
+}
+
+.signup-prompt a:hover {
+    text-decoration: underline;
+}
+.forgot {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.forgot a {
+    color :green;
+    text-decoration:none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}

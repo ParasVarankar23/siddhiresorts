@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Guest - Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/AddGuest.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Add Guest</h1>
+        <form method="POST" action="/addguest">
+            <label for="guestName">Guest Name:</label>
+            <input type="text" id="guestName" name="guestName" required>
+            <label for="guestEmail">Email:</label>
+            <input type="email" id="guestEmail" name="guestEmail" required>
+            <label for="guestPhone">Phone Number:</label>
+            <input type="text" id="guestPhone" name="guestPhone" required>
+            <label for="checkInDate">Check-In Date:</label>
+            <input type="date" id="checkInDate" name="checkInDate" required>
+            <label for="checkOutDate">Check-Out Date:</label>
+            <input type="date" id="checkOutDate" name="checkOutDate" required>
+            <button type="submit">Add Guest</button>
+        </form>
+    </div>
+</body>
+</html>

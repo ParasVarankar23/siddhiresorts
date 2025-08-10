@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/Login.css">
+</head>
+<body>
+    <div>
+        <nav>
+            <h1>Siddhi Resort</h1>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/room">Rooms</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/contact">Contact</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Signup</a>
+            </div>
+        </nav>
+    </div>
+    <div class="auth-container">
+        <div class="left-content">
+            <img src="../static/hotel3.jpg" alt="Hotel"/>
+        </div>
+        <div class="auth-form-container">
+            <div class="login-form">
+                <h1>Login Page</h1>
+                <form id="loginForm">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <a href="/forgotpassword" class='forgot'>Forgot Password?</a><br><br>
+                    <button type="submit">Login</button>
+                    <button type="button" class="facebook-button">Login with Facebook</button>
+                    <button type="button" class="google-button">
+                        <img src="../static/google.jpg" alt="Google"/>
+                        Login with Google
+                    </button>
+                </form>
+                <p class="signup-prompt">Don't have an account? <a href="/signup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevents form from submitting the traditional way
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Prepare the data to send
+            const data = {
+                username: username,
+                password: password
+            };
+
+            // Send data to the server using fetch
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = data.redirect; // Redirect to Admin page
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

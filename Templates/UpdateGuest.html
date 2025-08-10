@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Guest - Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/UpdateGuest.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Update Guest</h1>
+        <form method="POST" action="{{ url_for('update_guest', guest_id=guest[0]) }}">
+            <label for="guestName">Guest Name:</label>
+            <input type="text" id="guestName" name="guestName" value="{{ guest[1] }}" required>
+            <label for="guestEmail">Email:</label>
+            <input type="email" id="guestEmail" name="guestEmail" value="{{ guest[2] }}" required>
+            <label for="guestPhone">Phone Number:</label>
+            <input type="text" id="guestPhone" name="guestPhone" value="{{ guest[3] }}" required>
+            <label for="checkInDate">Check-In Date:</label>
+            <input type="date" id="checkInDate" name="checkInDate" value="{{ guest[4] }}" required>
+            <label for="checkOutDate">Check-Out Date:</label>
+            <input type="date" id="checkOutDate" name="checkOutDate" value="{{ guest[5] }}" required>
+            <button type="submit">Update Guest</button>
+        </form>
+    </div>
+</body>
+</html>

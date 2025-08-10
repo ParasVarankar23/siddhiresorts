@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/Setting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Settings</h1>
+        <form id="settingsForm">
+            <label for="siteTitle">Site Title:</label>
+            <input type="text" id="siteTitle" name="siteTitle" required>
+            <label for="siteDescription">Site Description:</label>
+            <textarea id="siteDescription" name="siteDescription" rows="4" required></textarea>
+            <button type="submit">Save Settings</button>
+        </form>
+    </div>
+    
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your settings have been saved successfully.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('settingsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Gather form data
+            const formData = new FormData(this);
+
+            // Send form data using Fetch API
+            fetch('/settings', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('successModal').style.display = 'block';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.querySelector('.modal .close').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('successModal')) {
+                document.getElementById('successModal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

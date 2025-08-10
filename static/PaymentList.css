@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.main-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.payment-table thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.payment-table th,
+.payment-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.payment-table th {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.payment-table td {
+    font-size: 14px;
+}
+
+.payment-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.payment-table tr:hover {
+    background-color: #e9ecef;
+}
+
+@media (max-width: 600px) {
+    .main-container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .payment-table th,
+    .payment-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}

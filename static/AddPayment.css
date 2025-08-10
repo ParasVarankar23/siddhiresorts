@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.payment-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.payment-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-container label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.payment-container input,
+.payment-container select {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.payment-container button {
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-container button:hover {
+    background-color: #0056b3;
+}
+
+.qr-code-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qr-code-container h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.qr-code-container img {
+    width: 160px;
+    height: 210px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .payment-container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .payment-container input,
+    .payment-container select,
+    .payment-container button {
+        font-size: 14px;
+    }
+
+    .qr-code-container h2 {
+        font-size: 18px;
+    }
+}

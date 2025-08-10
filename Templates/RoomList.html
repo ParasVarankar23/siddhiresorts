@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room List - Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/RoomList.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Room List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room No.</th>
+                    <th>Room Type</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="roomTableBody">
+                <!-- Room details will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/rooms')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('roomTableBody');
+                    data.forEach(room => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${room.room_number}</td>
+                            <td>${room.room_type}</td>
+                            <td>${room.price}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching room data:', error));
+        });
+    </script>
+</body>
+</html>

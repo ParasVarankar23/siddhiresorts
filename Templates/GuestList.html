@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest List - Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/GuestList.css">
+</head>
+<body>
+    <div class="main-content">
+        <a href="/addguest" class="add-guest-button">Add Guest</a>
+        <h1>Guest List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Guest Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Check-In Date</th>
+                    <th>Check-Out Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for guest in guests %}
+                <tr>
+                    <td>{{ guest[1] }}</td>
+                    <td>{{ guest[2] }}</td>
+                    <td>{{ guest[3] }}</td>
+                    <td>{{ guest[4] }}</td>
+                    <td>{{ guest[5] }}</td>
+                    <td>
+                        <form action="{{ url_for('update_guest', guest_id=guest[0]) }}" method="GET">
+                            <button type="submit" class="edit-button">Edit</button>
+                        </form>
+                        <br>
+                        <form action="{{ url_for('delete_guest', guest_id=guest[0]) }}" method="POST">
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/Home.css">
+</head>
+<body>
+    <div>
+        <nav>
+            <h1>Siddhi Resort</h1>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/room">Rooms</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/contact">Contact</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Signup</a>
+            </div>
+        </nav>
+    </div>
+    <div class="main-content">
+        <div class="left-content">
+            <img src="../static/hotel.jpg" alt="Hotel" />
+        </div>
+        <div class="right-content">
+            <h1>A Grand New Resort</h1>
+            <div class="reservation-form">
+                <form>
+                    <h1>Make a Reservation</h1>
+                    <label for="arrival">Check In</label>
+                    <input type="date" id="arrival" placeholder="Check-in" />
+                    <label for="departure">Check Out</label>
+                    <input type="date" id="departure" placeholder="Check-out" />
+                    <label for="rooms">Number of Rooms</label>
+                    <select id="rooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

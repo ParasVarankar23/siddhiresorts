@@ -1,0 +1,107 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    border-right: 2px solid #ccc;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: #333;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.sidebar-link .sidebar-text {
+    margin-right: auto;
+}
+
+.sidebar-link .sidebar-icon:last-child {
+    margin-left: 10px;
+}
+
+.sidebar-link:hover {
+    background-color: #f4f4f4;
+}
+
+.sidebar-sublink {
+    display: flex;
+    align-items: center;
+    color: #333;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-sublink:hover {
+    background-color: #f4f4f4;
+}
+
+.sidebar-icon {
+    margin-right: 10px;
+}
+
+.menu-icon {
+    margin-left: auto;
+}
+
+.image-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hospital-image {
+    width: 800px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.sidebar-submenu {
+    display: none;
+}
+
+.sidebar-submenu.active {
+    display: block;
+}
+
+
+#togglePayments .fa-chevron-down {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+#payments-submenu a {
+    padding-left: 30px;
+}
+
+#togglePayments.active .fa-chevron-down {
+    transform: rotate(180deg);
+}

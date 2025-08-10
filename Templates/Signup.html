@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Siddhi Resort</title>
+    <link rel="stylesheet" href="../static/Signup.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('signupForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                
+                const username = document.getElementById('username').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // Prepare the data to send
+                const data = {
+                    username: username,
+                    email: email,
+                    password: password
+                };
+
+                // Send data to the server using fetch
+                fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Signup successful! Redirecting to login...');
+                        window.location.href = '/login';
+                    } else {
+                        alert('Signup failed: ' + data.message);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <nav>
+            <h1>Siddhi Resort</h1>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/room">Rooms</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/contact">Contact</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Signup</a>
+            </div>
+        </nav>
+    </div>
+    <div class="auth-container">
+        <div class="left-content">
+            <img src="../static/hotel2.jpg" alt="Hotel"/>
+        </div>
+        <div class="auth-form-container">
+            <div class="signup-form">
+                <h1>Signup</h1>
+                <form id="signupForm">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <button type="submit">Signup</button>
+                    <p class="login-prompt">Already have an account? <a href="/login">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
